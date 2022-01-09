@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Student Feedback</title>
+</head>
+<body>
+    <main>
+        <section id="input-container">
+            <section id="feedback-template"></section>
+
+            <section class="students">
+                <div id="student-input">
+                    <input type="text" id="add-student-field">
+                    <button id="add-student-button" onclick=addStudent()>Add student</button>
+                </div>
+                <div id="student-container"></div>
+                <div id="delete-students-button">
+                    <button onclick=deleteCheckedStudents()>Delete selected student(s)</button>
+                </div>
+            </section>
+        </section>
+        
+        <div id="generate-feeback">
+            <label for="whitespace">Add whitespace between categories<input type="checkbox" name="whitespace" id="add-whitespace"></label>
+            <button type="submit" id="feedback-generator-button" onclick=generateFeedback()>Generate feedback</button>
+        </div>
+        
+        <hr>
+
+        <section id="output-container">
+            <section class="feedback-output">
+                <h1>Feedback output</h1>
+                <textarea name="output" id="output" cols="100" rows="20"></textarea>
+                <div>
+                    <button onclick=clearOutput()>Clear</button>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
