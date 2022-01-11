@@ -99,19 +99,18 @@ function generateFeedback() {
         window.alert('Did you forget to select a student?');
     }
 
-    if (document.getElementById('add-whitespace').checked == true){
-        var whitespace = " ";
-    } else {
-        var whitespace = "";
-    }
     
-
-    deleteCheckedStudents();
+    
     
     for (let studentName of studentNames) {
-        let feedback = studentName + whitespace + homeworkFeedback + whitespace + examFeedback + whitespace + classroomFeedback + whitespace + encouragementFeedback;
+        if (document.getElementById('add-whitespace').checked == true){
+            var feedback = `${studentName} ${homeworkFeedback} ${classroomFeedback} ${examFeedback} ${encouragementFeedback}`;
+        } else {
+            var feedback = `${studentName}${homeworkFeedback}${classroomFeedback}${examFeedback}${encouragementFeedback}`;
+        }
         outputFeedback(feedback);
     } 
+    deleteCheckedStudents();
 
 }
 
@@ -165,5 +164,5 @@ function addStudent() {
 }
 
 window.onload = function() {
-    buildTemplates(['homework', 'exam', 'classroom', 'encouragement']);
+    buildTemplates(['homework', 'classroom', 'exam', 'encouragement']);
 };
